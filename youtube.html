@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="top-buttons">
-        <a href="index.html" class="btn back-btn">ΠΙΣΩ</a>
+        <a href="index.html" class="btn back-btn">Πίσω</a>
     </div>
 
         <h1>Τα Βίντεό Μου</h1>
@@ -42,5 +42,30 @@
            <iframe width="480" height="270" src="https://www.youtube.com/embed/BsCyqzbABvI?si=naA9ylZ9K9P_m9nr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
+     <button id="darkModeToggle" class="mode-toggle">
+        🌙
+    </button>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    let isDarkMode = localStorage.getItem('darkMode') === 'true'; // Διαβάζουμε από το localStorage αν το σκοτεινό θέμα είναι ενεργοποιημένο
+
+    // Αν το σκοτεινό θέμα είναι ενεργοποιημένο, εφαρμόζουμε το σκοτεινό θέμα
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '☀️';
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        // Εναλλάσσουμε το σκοτεινό θέμα
+        document.body.classList.toggle('dark-mode');
+        isDarkMode = !isDarkMode;
+        darkModeToggle.innerHTML = isDarkMode ? '☀️' : '🌙';
+
+        // Αποθηκεύουμε την προτίμηση του χρήστη στο localStorage
+        localStorage.setItem('darkMode', isDarkMode);
+    });
+</script>
+
 </body>
 </html>
