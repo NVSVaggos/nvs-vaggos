@@ -1,44 +1,81 @@
-﻿body {
+/* Γενικές Ρυθμίσεις */
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-/* κουμπί ΠΙΣΩ */
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
+.dark-mode h1.title {
+    color: #ff9800; /* Χρώμα για τον τίτλο */
+}
+
+.dark-mode h2.title {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Κουμπί "Πίσω" */
 .back-link {
-    background-color: #007BFF;
+    background-color: #007BFF; /* Αρχικό μπλε χρώμα */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Εφέ αλλαγής χρώματος */
 }
 
 .back-link:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Σκούρο μπλε όταν το ποντίκι περνάει πάνω του */
+    color: #ffeb3b; /* Κίτρινο χρώμα κειμένου όταν το ποντίκι περνάει */
+    cursor: pointer; /* Χέρι δείκτης όταν το ποντίκι είναι πάνω στο κουμπί */
 }
 
-/* τίτλο : Social Media */
-.social-title {
-    text-align: center;
-    text-decoration: underline;
-    color: #333;
-    margin-top: 20px;
-    font-size: 32px;
-    font-weight: bold;
+/* Εφαρμογή ειδικών κανόνων για dark mode */
+.dark-mode .back-link {
+    background-color: #333; /* Σκοτεινό χρώμα στο background για το κουμπί στο dark mode */
+    color: #ff9800; /* Χρώμα κειμένου για dark mode */
 }
 
-/* κουτάκια των social media */
+.dark-mode .back-link:hover {
+    background-color: #ff9800; /* Κίτρινο background όταν το ποντίκι περνάει πάνω του στο dark mode */
+    color: #121212; /* Σκούρο χρώμα κειμένου όταν το ποντίκι περνάει στο dark mode */
+}
+
+/* Κουμπί Εναλλαγής Dark Mode (🌙/☀️) */
+.mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff; /* Αρχικό λευκό χρώμα */
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Εφέ αλλαγής χρώματος */
+}
+
+.mode-toggle:hover {
+    background-color: #ffeb3b; /* Χρώμα όταν ο χρήστης περνάει το ποντίκι πάνω του */
+}
+
+.dark-mode .mode-toggle {
+    background-color: #333; /* Χρώμα κουμπιού στο dark mode */
+    color: #ffeb3b; /* Χρώμα εικονιδίου στο dark mode */
+}
+
+/* Social Media Icons */
 .social-container {
     display: flex;
     justify-content: center;
@@ -48,7 +85,6 @@
     padding: 20px;
 }
 
-/* εικονίδιο social */
 .social-icon {
     display: flex;
     flex-direction: column;
@@ -59,11 +95,11 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* σκιά */
-    transition: transform 0.3s ease; /*Εφέ με ποντίκι */
+    transition: transform 0.3s ease; /* Εφέ με ποντίκι */
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Ζουμ όταν το ποντίκι περνάει πάνω από το εικονίδιο (εδώ 10%) */
+    transform: scale(1.1); /* Ζουμ όταν το ποντίκι περνάει πάνω από το εικονίδιο */
 }
 
 .social-icon img {
@@ -79,11 +115,99 @@
     font-size: 18px;
 }
 
-/* Για links του social media */
 .social-icon a {
     font-size: 24px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
     margin-top: 10px;
+}
+
+.dark-mode .social-icon {
+    background-color: #333; /* Σκοτεινό background για τα social media icons */
+}
+
+.dark-mode .social-icon span,
+.dark-mode .social-icon a {
+    color: #ff9800; /* Χρώμα για τα social media icons και τα links στο dark mode */
+}
+
+/* Προσθήκη ρυθμίσεων για τα υπόλοιπα dark mode components */
+.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn {
+    background-color: #ff9800;
+    color: #121212;
+}
+
+.dark-mode .contact {
+    background: #ff9800;
+    color: #121212;
+}
+
+/* Κουμπί ΠΙΣΩ (σε συγκεκριμένη θέση) */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+/* Γενικός τίτλος */
+.title {
+    text-align: center;
+    text-decoration: underline;
+    color: #333;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 250px; /* Πλάτος κουμπιού */
+    padding: 20px 70px;
+    background-color: #FF0000; /* Κόκκινο YouTube */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    gap: 10px;
+    flex-direction: row;/* Απόσταση μεταξύ εικόνας και κειμένου */
+}
+
+.subscribe-btn img {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%; /* Κάνει την εικόνα κυκλική */
+    margin-left: -20px; 
+}
+
+.subscribe-btn span {
+    font-size: 35px;
+
+    white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.05);
+    background-color: #CC0000; /* Πιο σκούρο κόκκινο στο hover */
+}
+
+/* Dark mode για το κουμπί */
+.dark-mode .subscribe-btn {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+.dark-mode .subscribe-btn:hover {
+    background-color: #CC0000;
 }
