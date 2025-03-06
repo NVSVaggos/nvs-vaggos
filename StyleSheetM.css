@@ -1,8 +1,57 @@
-﻿body {
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn {
+    background-color: #ff9800;
+    color: #121212;
+}
+
+.dark-mode .contact {
+    background: #ff9800;
+    color: #121212;
+}
+.dark-mode h2.title {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Floating button styles */
+.mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background-color: #ffeb3b;
+}
+
+.dark-mode .mode-toggle {
+    background-color: #333;
+    color: #ffeb3b;
 }
 
 .top-buttons {
@@ -26,6 +75,21 @@
 .btn:hover {
     background-color: #0056b3;
 }
+.back-link {
+    background-color: #007BFF; /* Αρχικό μπλε χρώμα */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Εφέ αλλαγής χρώματος */
+}
+
+.back-link:hover {
+    background-color: #0056b3; /* Χρώμα όταν ο χρήστης περνάει το ποντίκι πάνω του */
+}
+
 
 .container {
     max-width: 800px;
